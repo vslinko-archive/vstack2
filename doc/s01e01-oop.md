@@ -48,6 +48,44 @@ except(c._name).toEqual('Slava');
 * Speed degradation.
 
 
+## [vstack/lib/oop/implement]
+
+Group class inheritance and implementation into one helper function call.
+
+### Usage
+
+```js
+function BaseClass(props) {
+    this._name = props.name || 'Vyacheslav';
+}
+
+implement(BaseClass, {
+    toString: function() {
+        return String(this._name);
+    }
+});
+
+function ChildClass(props) {
+    parent(BaseClass, this)(props);
+    this._surname = props.surname || 'Slinko';
+}
+
+implement(ChildClass, BaseClass, {
+    toString: function() {
+        return parent(BaseClass, this).toString() + ' ' + this._surname;
+    }
+});
+
+var c = new ChildClass({name: 'Slava'});
+except(String(c)).toEqual('Slava Slinko');
+```
+
+### Solved problems
+
+* Method definitions grouped into one definition object.
+
+
 [vstack/lib/oop/inherits]: https://github.com/vslinko/vstack/blob/master/lib/oop/inherits.js
 [vstack/lib/oop/parent]: https://github.com/vslinko/vstack/blob/master/lib/oop/parent.js
+[vstack/lib/oop/implement]: https://github.com/vslinko/vstack/blob/master/lib/oop/implement.js
 [inherits]: https://www.npmjs.org/package/inherits
