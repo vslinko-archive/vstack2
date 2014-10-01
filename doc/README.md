@@ -9,6 +9,7 @@
 
 * [`vstack/lib/oop`](s01e01-oop.md)
 * [`vstack/lib/ioc`](s01e02-ioc.md)
+* [`vstack/lib/orm`](s01e03-orm.md)
 
 ### Helpers
 
