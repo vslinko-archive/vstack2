@@ -36,7 +36,7 @@ function ChildClass(props) {
 }
 
 var c = new ChildClass({name: 'Slava'});
-except(c._name).toEqual('Slava');
+expect(c._name).toEqual('Slava');
 ```
 
 ## Solved problems
@@ -77,7 +77,7 @@ implement(ChildClass, BaseClass, {
 });
 
 var c = new ChildClass({name: 'Slava'});
-except(String(c)).toEqual('Slava Slinko');
+expect(String(c)).toEqual('Slava Slinko');
 ```
 
 ### Solved problems
@@ -99,9 +99,9 @@ function User(props) {
 }
 
 var user = User({name: 'Slava'});
-except(user instanceof User).toBeTruthy();
-except(user._name).toEqual('Slava');
-except(User(user)).toBe(user);
+expect(user instanceof User).toBeTruthy();
+expect(user._name).toEqual('Slava');
+expect(User(user)).toBe(user);
 ```
 
 ### Solved problems
