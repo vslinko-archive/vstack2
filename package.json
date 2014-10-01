@@ -5,7 +5,8 @@
         "test": "jest -i"
     },
     "dependencies": {
-        "inherits": "~2.0"
+        "inherits": "~2.0",
+        "react": "~0.11"
     },
     "devDependencies": {
         "jest-cli": "~0.1"

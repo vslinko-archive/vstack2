@@ -5,4 +5,10 @@
 
 ## Table of contents
 
-1. [`vstack/lib/oop`](s01e01-oop.md)
+### Main parts
+
+* [`vstack/lib/oop`](s01e01-oop.md)
+
+### Helpers
+
+* [`vstack/lib/util`](s02e01-util.md)
