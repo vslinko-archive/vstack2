@@ -85,7 +85,34 @@ except(String(c)).toEqual('Slava Slinko');
 * Method definitions grouped into one definition object.
 
 
+## [vstack/lib/oop/idempotent]
+
+Inspired by [this article] I've created this constructor helper.
+
+### Usage
+
+```js
+function User(props) {
+    return idempotent(User, props, function(props) {
+        this._name = props.name || 'Vyacheslav';
+    }, this);
+}
+
+var user = User({name: 'Slava'});
+except(user instanceof User).toBeTruthy();
+except(user._name).toEqual('Slava');
+except(User(user)).toBe(user);
+```
+
+### Solved problems
+
+* Objects can be created without `new` statement.
+* Constructor called with instance of that constructor doesn't create new instance.
+
+
 [vstack/lib/oop/inherits]: https://github.com/vslinko/vstack/blob/master/lib/oop/inherits.js
 [vstack/lib/oop/parent]: https://github.com/vslinko/vstack/blob/master/lib/oop/parent.js
 [vstack/lib/oop/implement]: https://github.com/vslinko/vstack/blob/master/lib/oop/implement.js
+[vstack/lib/oop/idempotent]: https://github.com/vslinko/vstack/blob/master/lib/oop/idempotent.js
 [inherits]: https://www.npmjs.org/package/inherits
+[this article]: http://gcanti.github.io/2014/09/25/six-reasons-to-define-constructors-with-only-one-argument.html
