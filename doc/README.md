@@ -13,3 +13,4 @@
 ### Helpers
 
 * [`vstack/lib/util`](s02e01-util.md)
+* [`vstack/lib/polyfill`](s02e02-polyfill.md)
