@@ -8,6 +8,7 @@
 ### Main parts
 
 * [`vstack/lib/oop`](s01e01-oop.md)
+* [`vstack/lib/ioc`](s01e02-ioc.md)
 
 ### Helpers
 
