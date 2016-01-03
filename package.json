@@ -10,7 +10,8 @@
         "dep-graph": "~1.1",
         "es6-promise": "~1.0",
         "tcomb": "~0.2",
-        "tcomb-validation": "~0.1"
+        "tcomb-validation": "~0.1",
+        "store": "~1.3"
     },
     "devDependencies": {
         "jest-cli": "~0.1"

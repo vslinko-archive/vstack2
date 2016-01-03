@@ -39,5 +39,56 @@ expect(function() {
 * Immutable structure could not store invalid state.
 
 
+## [vstack/lib/orm/Model]:
+
+Model instance is immutable object which could contain invalid state
+and could be extended.
+
+### Usage
+
+```js
+function Model() {
+}
+
+implement(Model, {
+});
+
+function User() {}
+
+implement(User, Model, {
+    getReferences: function() {
+        return {
+            post: Post
+        };
+    },
+
+    getSchema: function() {
+        return schema.structure({
+            username: schema.String,
+            posts: schema.list(this._referenceSchema('post'))
+        });
+    }
+});
+
+function Post() {}
+
+implement(Post, Model, {
+    getReferences: function() {
+        return {
+            user: User
+        };
+    },
+
+    getSchema: function() {
+        return schema.structure({
+            title: schema.String,
+            author: this._referenceSchema('user')
+        });
+    }
+});
+```
+
+
 [vstack/lib/orm/schema]: https://github.com/vslinko/vstack/blob/master/lib/orm/schema.js
+[vstack/lib/orm/Model]: https://github.com/vslinko/vstack/blob/master/lib/orm/Model.js
 [tcomb]: https://www.npmjs.org/package/tcomb
